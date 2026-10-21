@@ -150,7 +150,7 @@ export function Hero() {
               transition={{ duration: 1.4, ease, delay: 0.4 }}
               className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-bg-2"
             >
-              <Image src={site.portrait} alt={`${site.fullName}, web designer`} fill priority sizes="(min-width:1024px) 30rem, 90vw" className="object-cover object-[60%_center]" />
+              <Image src={site.portrait} alt={`${site.fullName}, web designer`} fill priority sizes="(min-width:1024px) 30rem, 90vw" className="object-cover object-[center_18%]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0" />
               <span className="absolute right-4 top-4 rounded-full bg-black/35 px-3 py-1 text-xs text-white backdrop-blur">{site.location}</span>
               <div className="absolute inset-x-5 bottom-5 text-white">

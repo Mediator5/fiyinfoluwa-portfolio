@@ -24,7 +24,9 @@ export const site = {
     `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`,
   mailto: (subject = "New website project") => `mailto:${email}?subject=${encodeURIComponent(subject)}`,
   calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL || "",
-  portrait: "/images/fiyinfoluwa.jpg",
+  portrait: "/images/fiyinfoluwa-hero.jpg",
+  portraitAbout: "/images/fiyinfoluwa-about.jpg",
+  portraitStudio: "/images/fiyinfoluwa-studio.jpg",
   // Add your profile links here — empty ones are hidden automatically.
   socials: [
     { label: "LinkedIn", href: "" },

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { site, unsplash } from "@/data/site";
+import { site } from "@/data/site";
 import { RevealText } from "@/components/ui/RevealText";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
@@ -20,19 +20,23 @@ export function About() {
           <motion.div initial="hidden" whileInView="show" viewport={{ once: true, margin: "-15%" }}>
             <motion.div
               variants={{ hidden: { clipPath: "inset(0 0 100% 0 round 2rem)" }, show: { clipPath: "inset(0 0 0% 0 round 2rem)", transition: { duration: 1.3, ease } } }}
-              className="relative aspect-square overflow-hidden rounded-[2rem]"
+              className="relative aspect-[4/5] overflow-hidden rounded-[2rem]"
             >
               <motion.div variants={{ hidden: { scale: 1.2 }, show: { scale: 1, transition: { duration: 1.6, ease } } }} className="absolute inset-0">
-                <Image src={site.portrait} alt={site.fullName} fill sizes="(min-width:1024px) 40vw, 100vw" className="object-cover" />
+                <Image src={site.portraitAbout} alt={site.fullName} fill sizes="(min-width:1024px) 40vw, 100vw" className="object-cover object-[center_20%]" />
               </motion.div>
             </motion.div>
           </motion.div>
-          <ParallaxImage
-            src={unsplash("1486312338219-ce68d2c6f44d", 900)}
-            alt="Working on a laptop"
-            className="absolute -bottom-10 -right-4 hidden aspect-[4/5] w-44 rounded-2xl border-4 border-bg shadow-2xl sm:block md:-right-10 md:w-56"
-            sizes="224px"
-          />
+          <div className="absolute -bottom-10 -right-4 hidden w-44 overflow-hidden rounded-2xl border-4 border-bg shadow-2xl sm:block md:-right-10 md:w-56">
+            <ParallaxImage
+              src={site.portraitStudio}
+              alt={`${site.firstName} ${site.lastName}`}
+              imgClassName="object-[center_20%]"
+              className="aspect-[4/5] w-full"
+              sizes="224px"
+              amount={8}
+            />
+          </div>
           <div className="absolute -left-3 top-6 rounded-2xl bg-accent px-4 py-3 text-accent-ink shadow-xl md:-left-8">
             <p className="text-xs font-medium uppercase tracking-wider">Based in</p>
             <p className="font-semibold">{site.location}</p>
